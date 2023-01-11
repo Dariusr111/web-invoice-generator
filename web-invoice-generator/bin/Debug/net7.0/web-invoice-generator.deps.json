@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v7.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v7.0": {
+      "web-invoice-generator/1.0.0": {
+        "runtime": {
+          "web-invoice-generator.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "web-invoice-generator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
