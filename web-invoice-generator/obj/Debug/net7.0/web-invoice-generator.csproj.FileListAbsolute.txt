@@ -29,3 +29,10 @@ C:\cs\web-invoice-generator\web-invoice-generator\obj\Debug\net7.0\refint\web-in
 C:\cs\web-invoice-generator\web-invoice-generator\obj\Debug\net7.0\web-invoice-generator.pdb
 C:\cs\web-invoice-generator\web-invoice-generator\obj\Debug\net7.0\web-invoice-generator.genruntimeconfig.cache
 C:\cs\web-invoice-generator\web-invoice-generator\obj\Debug\net7.0\ref\web-invoice-generator.dll
+C:\cs\web-invoice-generator\web-invoice-generator\bin\Debug\net7.0\System.Data.SqlClient.dll
+C:\cs\web-invoice-generator\web-invoice-generator\bin\Debug\net7.0\runtimes\win-arm64\native\sni.dll
+C:\cs\web-invoice-generator\web-invoice-generator\bin\Debug\net7.0\runtimes\win-x64\native\sni.dll
+C:\cs\web-invoice-generator\web-invoice-generator\bin\Debug\net7.0\runtimes\win-x86\native\sni.dll
+C:\cs\web-invoice-generator\web-invoice-generator\bin\Debug\net7.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\cs\web-invoice-generator\web-invoice-generator\bin\Debug\net7.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\cs\web-invoice-generator\web-invoice-generator\obj\Debug\net7.0\web-invoice-generator.csproj.CopyComplete

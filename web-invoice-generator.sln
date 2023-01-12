@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33205.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "web-invoice-generator", "web-invoice-generator\web-invoice-generator.csproj", "{21FA69B5-E00D-4BFD-88C5-184E47EF597E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "web-invoice-generator", "web-invoice-generator\web-invoice-generator.csproj", "{21FA69B5-E00D-4BFD-88C5-184E47EF597E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
