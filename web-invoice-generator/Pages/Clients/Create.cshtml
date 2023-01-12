@@ -1,0 +1,68 @@
+﻿@page
+@model web_invoice_generator.Pages.Clients.CreateModel
+@{
+}
+
+<br>
+<h2>Naujas Klientas</h2>
+
+
+@if (Model.errorMessage.Length > 0)
+{
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
+		<strong>@Model.errorMessage</strong>
+		<button type="button" class="btn-close" data-bs-dissmiss="alert" aria-label="Close"></button>
+	</div>
+}
+
+<form method="POST">
+	<div class="row mb-3">
+		<label class="col-sm-3 col-form-label">Tipas</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="type" value="@Model.clientInfo.type"></input>
+			@*if field empty(error), filling form with value atribute with existing info *@
+		</div>	
+		
+		<label class="col-sm-3 col-form-label">Pavadinimas</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="name" value="@Model.clientInfo.name"></input>
+		</div>
+
+		<label class="col-sm-3 col-form-label">Adresas</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="address" value="@Model.clientInfo.address"></input>
+		</div>
+
+		<label class="col-sm-3 col-form-label">Kodas</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="code" value="@Model.clientInfo.code"></input>
+		</div>
+
+		<label class="col-sm-3 col-form-label">PVM mok. kodas</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" name="vat_code"  value="@Model.clientInfo.vat_code"></input>
+		</div>
+		
+		@*if success shoving confirmation that data correct *@
+		@if (Model.successMessage.Length > 0)
+		{
+			<div class="row mb-3">
+					<div class="col-sm-9">
+						<div class="alert alert-success alert-dismissible fade show" role="alert">
+							<strong>@Model.successMessage</strong>
+							<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+						</div>
+					</div>
+			</div>
+		}
+
+		<div class="row mb-3">
+			<div class="offset-sm-3 col-sm-3 d-grid">
+				<button type="submit" class="btn btn-primary">Išsaugoti</button>
+			</div>
+			<div class="col-sm-3 d-grid">
+				<a class="btn btn-outline-primary" href="/" role="button">Atšaukti</a>
+			</div>
+		</div>
+	</div>
+</form>

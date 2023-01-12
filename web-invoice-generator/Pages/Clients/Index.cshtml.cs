@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 
+
 namespace web_invoice_generator.Pages.Clients
 {
     public class IndexModel : PageModel
@@ -19,7 +20,7 @@ namespace web_invoice_generator.Pages.Clients
                 {
                     connection.Open();
                     String sql = "SELECT * FROM clients";
-                    using (SqlCommand command = SqlCommand(sql, connection)) 
+                    using (SqlCommand command = new SqlCommand(sql, connection)) 
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
