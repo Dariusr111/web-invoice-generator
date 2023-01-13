@@ -6,10 +6,12 @@ namespace web_invoice_generator.Pages.Clients
 {
     public class CreateModel : PageModel
     {
-        public ClientInfo clientInfo = new ClientInfo();
-        // if any field empty we get error message (global var)
+
+		// global variables
+		public ClientInfo clientInfo = new ClientInfo();
+        // if any field empty we get error message 
         public String errorMessage = "";
-        // if data saved success message (global var)
+        // if data saved success message
         public String successMessage = "";
 
         public void OnGet()
@@ -28,7 +30,7 @@ namespace web_invoice_generator.Pages.Clients
             // validating if any field empty
             if (clientInfo.type.Length == 0 || clientInfo.name.Length == 0 || clientInfo.address.Length == 0 || clientInfo.code.Length == 0 || clientInfo.vat_code.Length == 0)
             {
-                errorMessage = "All the fields are required";
+                errorMessage = "Visi laukai turi bûti uþpildyti";
                 return;
             }
 
