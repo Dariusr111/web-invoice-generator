@@ -16,6 +16,7 @@ namespace web_invoice_generator.Pages.Clients
             try
             {
                 String connectionString = "Data Source=localhost\\sqlexpress;Initial Catalog=invoice-gen;Integrated Security=True";
+
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
@@ -37,27 +38,20 @@ namespace web_invoice_generator.Pages.Clients
                                 
                                 // adding object clientInfo to our list
                                 listClients.Add(clientInfo);
-
-
                             }
                         }
                     }
                 }
             }
+
             catch (Exception ex)
 
             {
                 // adding statement to show error incase exeption
                 Console.WriteLine("Exeption: " + ex.ToString());
-            
             }
-
-
-
-
         }
     }
-
 
     // class ClientInfo allow to store one client data
     public class ClientInfo
