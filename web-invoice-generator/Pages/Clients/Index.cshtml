@@ -6,7 +6,7 @@
 }
 <br>
 <h2>List of Clients</h2>
-<a class="btn btn-primary btn-sm" href="/Clients/Create">New Client</a>
+<a class="btn btn-primary btn-sm mt-2 mb-2" href="/Clients/Create">New Client</a>
 <table class="table">
 	<thead>
 		<tr>
@@ -20,6 +20,7 @@
 			<th>Veiksmas</th>
 		</tr>
 	</thead>
+
 	<tbody>
 		@foreach(var item in Model.listClients)
 		{
@@ -29,18 +30,13 @@
 				<td>@item.name</td>
 				<td>@item.address</td>
 				<td>@item.code</td>
-				<td>@item.vat_code</td>
 				<td>@item.created_at</td>
 				<td>
 					<a class="btn btn-primary btn-sm" href="/Clients/Edit?id=@item.id">Redaguoti</a>
 					<a class="btn btn-danger btn-sm" href="/Clients/Delete?id=@item.id">Ištrinti</a>
 				</td>
-
 			</tr>
-
 		}
-
-
 
 	</tbody>
 </table>

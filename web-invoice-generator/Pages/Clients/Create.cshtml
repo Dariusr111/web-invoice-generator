@@ -16,37 +16,38 @@
 }
 
 <form method="POST">
-	<div class="row mb-3">
-		<label class="col-sm-3 col-form-label">Tipas</label>
-		<div class="col-sm-6">
+	<div class="row mt-3 mb-5">
+
+		<label class="col-sm-3 col-form-label m-1">Tipas</label>
+		<div class="col-sm-6 m-1">
 			<input type="text" class="form-control" name="type" value="@Model.clientInfo.type"></input>
 			@*if field empty(error), filling form with value atribute with existing info *@
 		</div>	
 		
-		<label class="col-sm-3 col-form-label">Pavadinimas</label>
-		<div class="col-sm-6">
+		<label class="col-sm-3 col-form-label m-1">Pavadinimas</label>
+		<div class="col-sm-6 m-1">
 			<input type="text" class="form-control" name="name" value="@Model.clientInfo.name"></input>
 		</div>
 
-		<label class="col-sm-3 col-form-label">Adresas</label>
-		<div class="col-sm-6">
+		<label class="col-sm-3 col-form-label m-1">Adresas</label>
+		<div class="col-sm-6 m-1">
 			<input type="text" class="form-control" name="address" value="@Model.clientInfo.address"></input>
 		</div>
 
-		<label class="col-sm-3 col-form-label">Kodas</label>
-		<div class="col-sm-6">
+		<label class="col-sm-3 col-form-label m-1">Kodas</label>
+		<div class="col-sm-6 m-1">
 			<input type="text" class="form-control" name="code" value="@Model.clientInfo.code"></input>
 		</div>
 
-		<label class="col-sm-3 col-form-label">PVM mok. kodas</label>
-		<div class="col-sm-6">
+		<label class="col-sm-3 col-form-label m-1">PVM mok. kodas</label>
+		<div class="col-sm-6 m-1">
 			<input type="text" class="form-control" name="vat_code"  value="@Model.clientInfo.vat_code"></input>
 		</div>
 		
 		@*if success shoving confirmation that data correct *@
 		@if (Model.successMessage.Length > 0)
 		{
-			<div class="row mb-3">
+			<div class="row m-2">
 					<div class="col-sm-9">
 						<div class="alert alert-success alert-dismissible fade show" role="alert">
 							<strong>@Model.successMessage</strong>
@@ -56,8 +57,8 @@
 			</div>
 		}
 
-		<div class="row mb-3">
-			<div class="offset-sm-3 col-sm-3 d-grid">
+		<div class="row m-2">
+			<div class="offset-sm-3 col-sm-3 d-grid me-2">
 				<button type="submit" class="btn btn-primary">Išsaugoti</button>
 			</div>
 			<div class="col-sm-3 d-grid">
