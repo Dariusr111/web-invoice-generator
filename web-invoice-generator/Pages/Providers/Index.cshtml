@@ -1,12 +1,12 @@
 ﻿@* @page means that we not using any controler  *@
 @page 
-@model web_invoice_generator.Pages.Clients.IndexModel
+@model web_invoice_generator.Pages.Providers.IndexModel
 @{
 
 }
 <br>
-<h2>Klientų sąrašas</h2>
-<a class="btn btn-primary btn-sm mt-2 mb-2" href="/Clients/Create">Naujas klientas</a>
+<h2>Tiekėjų sąrašas</h2>
+<a class="btn btn-primary btn-sm mt-2 mb-2" href="/Providers/Create">Naujas tiekėjas</a>
 <table class="table">
 	<thead>
 		<tr>
@@ -16,13 +16,14 @@
 			<th>Adresas</th>
 			<th>Kodas</th>
 			<th>PVM mok. kodas</th>
+			<th>PVM mokėtojas</th>
 			<th>Sukurtas</th>
 			<th>Veiksmas</th>
 		</tr>
 	</thead>
 
 	<tbody>
-		@foreach(var item in Model.listClients)
+		@foreach(var item in Model.listProviders)
 		{
 			<tr>
 				<td>@item.id</td>
@@ -31,10 +32,11 @@
 				<td>@item.address</td>
 				<td>@item.code</td>
 				<td>@item.vat_code</td>
+				<td>@item.vat_payer</td>
 				<td>@item.created_at</td>
 				<td>
-					<a class="btn btn-primary btn-sm" href="/Clients/Edit?id=@item.id">Redaguoti</a>
-					<a class="btn btn-danger btn-sm" href="/Clients/Delete?id=@item.id">Ištrinti</a>
+					<a class="btn btn-primary btn-sm" href="/Providers/Edit?id=@item.id">Redaguoti</a>
+					<a class="btn btn-danger btn-sm" href="/Providers/Delete?id=@item.id">Ištrinti</a>
 				</td>
 			</tr>
 		}
