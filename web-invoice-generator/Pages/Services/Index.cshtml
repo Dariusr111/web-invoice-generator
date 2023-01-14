@@ -1,0 +1,37 @@
+﻿@* @page means that we not using any controler  *@
+@page 
+@model web_invoice_generator.Pages.Services.IndexModel
+@{
+
+}
+<br>
+<h2>Paslaugų sąrašas</h2>
+<a class="btn btn-primary btn-sm mt-2 mb-2" href="/Services/Create">Nauja paslauga</a>
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Pavadinimas</th>
+			<th>Eur / val.</th>
+			<th>Sukurtas</th>
+			<th>Veiksmas</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		@foreach(var item in Model.listServices)
+		{
+			<tr>
+				<td>@item.id</td>
+				<td>@item.name</td>
+				<td>@item.hour_price</td>
+				<td>@item.created_at</td>
+				<td>
+					<a class="btn btn-primary btn-sm col-8 m-1" href="/Services/Edit?id=@item.id">Redaguoti</a>
+					<a class="btn btn-danger btn-sm col-8 m-1" href="/Services/Delete?id=@item.id">Ištrinti</a>
+				</td>
+			</tr>
+		}
+
+	</tbody>
+</table>

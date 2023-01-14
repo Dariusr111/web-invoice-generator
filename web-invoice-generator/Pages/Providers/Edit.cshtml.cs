@@ -46,7 +46,7 @@ namespace web_invoice_generator.Pages.Providers
 								providerInfo.address = reader.GetString(3);
 								providerInfo.code = reader.GetString(4);
 								providerInfo.vat_code = reader.GetString(5);
-								providerInfo.vat_payer = reader.GetString(5);
+								providerInfo.vat_payer = reader.GetString(6);
 							}
 						}
 

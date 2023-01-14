@@ -3,12 +3,12 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
 
 
-namespace web_invoice_generator.Pages.Providers
+namespace web_invoice_generator.Pages.Services
 {
     public class IndexModel : PageModel
     {
-        // to store all providers creating listProviders (public variable)
-        public List<ProviderInfo> listProviders = new List<ProviderInfo>();
+        // to store all services creating listServices (public variable)
+        public List<ServiceInfo> listServices = new List<ServiceInfo>();
 
         // filling this list with OnGet method
         public void OnGet()
@@ -20,25 +20,21 @@ namespace web_invoice_generator.Pages.Providers
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    String sql = "SELECT * FROM providers";
+                    String sql = "SELECT * FROM services";
                     using (SqlCommand command = new SqlCommand(sql, connection)) 
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read()) 
                             { 
-                                ProviderInfo providerInfo = new ProviderInfo();
-                                providerInfo.id = "" + reader.GetInt32(0);
-                                providerInfo.type = reader.GetString(1);
-                                providerInfo.name = reader.GetString(2);
-                                providerInfo.address = reader.GetString(3);  
-                                providerInfo.code = reader.GetString(4);
-                                providerInfo.vat_code = reader.GetString(5);
-                                providerInfo.vat_payer = reader.GetString(6);
-                                providerInfo.created_at = reader.GetDateTime(7).ToString();
+                                ServiceInfo serviceInfo = new ServiceInfo();
+								serviceInfo.id = "" + reader.GetInt32(0);
+								serviceInfo.name = reader.GetString(1);
+								serviceInfo.hour_price = "" + reader.GetInt32(2);
+								serviceInfo.created_at = reader.GetDateTime(3).ToString();
                                 
                                 // adding object clientInfo to our list
-                                listProviders.Add(providerInfo);
+                                listServices.Add(serviceInfo);
                             }
                         }
                     }
@@ -54,16 +50,12 @@ namespace web_invoice_generator.Pages.Providers
         }
     }
 
-    // class ClientInfo allow to store one client data
-    public class ProviderInfo
+    // class ServiceInfo allow to store one client data
+    public class ServiceInfo
     {
         public String id;
-        public String type;
         public String name;
-        public String address;
-        public String code;
-        public String vat_code;
-        public String vat_payer;
+        public String hour_price;
         public String created_at;
     }
 }
