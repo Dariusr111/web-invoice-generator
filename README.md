@@ -1,4 +1,5 @@
 # web-invoice-generator
 
 SQL DB:
-![image](https://user-images.githubusercontent.com/106965568/212299180-b82ccde0-25bd-442a-8ede-7dd6a206fa5c.png)
+![image](https://user-images.githubusercontent.com/106965568/212469763-550ec1c2-90d9-4597-a636-4a0430990cb4.png)
+
