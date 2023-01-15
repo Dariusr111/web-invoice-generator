@@ -20,28 +20,28 @@
 
 		<label class="col-sm-3 col-form-label m-1">Serija</label>
 		<div class="col-sm-6 m-1">
-			<input type="text" class="form-control" name="name" value="@Model.invoiceInfo.serial"></input>
+			<input type="text" class="form-control" name="serial" value="@Model.invoiceInfo.serial"></input>
 		</div>
 
 		<label class="col-sm-3 col-form-label m-1">Numeris</label>
 		<div class="col-sm-6 m-1">
-			<input type="text" class="form-control" name="name" value="@Model.invoiceInfo.number"></input>
+			<input type="text" class="form-control" name="number" value="@Model.invoiceInfo.number"></input>
 		</div>
 
 		<label class="col-sm-3 col-form-label m-1">Užsakovas</label>
 		<div class="col-sm-6 m-1">
-			<input type="text" class="form-control" name="type" value="@Model.invoiceInfo.client_id"></input>
+			<input type="text" class="form-control" name="client_id" value="@Model.invoiceInfo.client_id"></input>
 			@*if field empty(error), filling form with value atribute with existing info *@
 		</div>
 
 		<label class="col-sm-3 col-form-label m-1">Tiekėjas</label>
 		<div class="col-sm-6 m-1">
-			<input type="text" class="form-control" name="name" value="@Model.invoiceInfo.provider_id"></input>
+			<input type="text" class="form-control" name="provider_id" value="@Model.invoiceInfo.provider_id"></input>
 		</div>
 
-		<label class="col-sm-3 col-form-label m-1">Užsakymas</label>
+		<label class="col-sm-3 col-form-label m-1">Suma</label>
 		<div class="col-sm-6 m-1">
-			<input type="text" class="form-control" name="name" value="">order_id</input>
+			<input type="text" class="form-control" name="total_price" value="@Model.invoiceInfo.total_price"></input>
 		</div>
 
 		

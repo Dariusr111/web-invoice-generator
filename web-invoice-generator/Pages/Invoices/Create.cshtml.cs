@@ -42,8 +42,8 @@ namespace web_invoice_generator.Pages.Invoices
                 {
                     connection.Open();
                     String sql = "INSERT INTO invoices " +
-                        "(client_id, provider_id, total_price) VALUES " +
-                        "(@client_id, @provider_id, @total_price);";
+                        "(serial, number, client_id, provider_id, total_price) VALUES " +
+                        "(@serial, @number, @client_id, @provider_id, @total_price);";
 
                     using (SqlCommand command = new SqlCommand(sql, connection))
                     {
