@@ -1,14 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using System.Data.SqlClient;
+using web_invoice_generator.Pages.Invoices;
 
 
-namespace web_invoice_generator.Pages.Invoices
+namespace web_invoice_generator.Pages.Orders
 {
     public class IndexModel : PageModel
     {
-        // to store all invoices creating listInvoices (public variable)
-        public List<InvoiceInfo> listInvoices = new List<InvoiceInfo>();
+        // to store all invoices creating listOrders (public variable)
+        public List<OrderInfo> listOrders = new List<OrderInfo>();
 
         // filling this list with OnGet method
         public void OnGet()
@@ -20,24 +21,22 @@ namespace web_invoice_generator.Pages.Invoices
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
                     connection.Open();
-                    String sql = "SELECT * FROM invoices";
+                    String sql = "SELECT * FROM orders";
                     using (SqlCommand command = new SqlCommand(sql, connection)) 
                     {
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
                             while (reader.Read()) 
                             { 
-                                InvoiceInfo invoiceInfo = new InvoiceInfo();
-								invoiceInfo.id = "" + reader.GetInt32(0);
-								invoiceInfo.serial = reader.GetString(1);
-								invoiceInfo.number = "" + reader.GetInt32(2);
-								invoiceInfo.client_id = "" + reader.GetInt32(3);
-								invoiceInfo.provider_id = "" + reader.GetInt32(4);
-								invoiceInfo.total_price = "" + reader.GetInt32(5);
-								invoiceInfo.created_at = reader.GetDateTime(6).ToString();
-                                
-                                // adding object invoiceInfo to our list
-                                listInvoices.Add(invoiceInfo);
+                                OrderInfo orderInfo = new OrderInfo();
+								orderInfo.id = "" + reader.GetInt32(0);
+								orderInfo.invoice_id = "" + reader.GetInt32(1);
+								orderInfo.services_id = "" + reader.GetInt32(2);
+                                orderInfo.hours = "" + reader.GetInt32(3);
+								orderInfo.created_at = reader.GetDateTime(4).ToString();
+
+								// adding object clientInfo to our list
+								listOrders.Add(orderInfo);
                             }
                         }
                     }
@@ -53,15 +52,13 @@ namespace web_invoice_generator.Pages.Invoices
         }
     }
 
-    // class InvoiceInfo allow to store one client data
-    public class InvoiceInfo
+    // class OrderInfo allow to store one client data
+    public class OrderInfo
     {
         public String id;
-        public String serial;
-        public String number;
-        public String client_id;
-        public String provider_id;
-        public String total_price;
+        public String invoice_id;
+        public String services_id;
+        public String hours;
         public String created_at;
     }
 }

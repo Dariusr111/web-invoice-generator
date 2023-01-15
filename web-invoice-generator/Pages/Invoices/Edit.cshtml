@@ -1,5 +1,5 @@
 ﻿@page
-@model web_invoice_generator.Pages.Services.EditModel
+@model web_invoice_generator.Pages.Invoices.EditModel
 @{
 }
 
@@ -16,18 +16,28 @@
 }
 
 <form method="POST">
-	@* service id *@	
-	<input type="hidden" name="id" value="@Model.serviceInfo.id">
+	@* invoice id *@	
+	<input type="hidden" name="id" value="@Model.invoiceInfo.id"></input>
 	<div class="row mt-3 mb-5">
-		<label class="col-sm-3 col-form-label m-1">Pavadinimas</label>
+		<label class="col-sm-3 col-form-label m-1">Serija</label>
 		<div class="col-sm-6 m-1">
-			<input type="text" class="form-control" name="name" value="@Model.serviceInfo.name">
+			<input type="text" class="form-control" name="serial" value="@Model.invoiceInfo.serial"></input>
 			@*if field empty(error), filling form with value atribute with existing info *@
 		</div>	
 
-		<label class="col-sm-3 col-form-label m-1">Kaina Eur/val.</label>
+		<label class="col-sm-3 col-form-label m-1">Numeris</label>
 		<div class="col-sm-6 m-1">
-			<input type="text" class="form-control" name="hour_price" value="@Model.serviceInfo.hour_price">
+			<input type="text" class="form-control" name="number" value="@Model.invoiceInfo.number"></input>
+		</div>
+
+		<label class="col-sm-3 col-form-label m-1">Klientas</label>
+		<div class="col-sm-6 m-1">
+			<input type="text" class="form-control" name="client_id" value="@Model.invoiceInfo.client_id"></input>
+		</div>
+
+		<label class="col-sm-3 col-form-label m-1">Tiekėjas</label>
+		<div class="col-sm-6 m-1">
+			<input type="text" class="form-control" name="provider_id" value="@Model.invoiceInfo.provider_id"></input>
 		</div>
 
 		@*if success showing confirmation that data correct *@
