@@ -1,50 +1,51 @@
 ﻿@page
-@model web_invoice_generator.Pages.Orders.CreateModel
+@model web_invoice_generator.Pages.Orders.EditModel
 @{
 }
 
 <br>
-<h2>Naujas užsakymas</h2>
+<h2>Redaguoti</h2>
 
 
 @if (Model.errorMessage.Length > 0)
 {
-	<div class='alert alert-warning alert-dismissible fade show' role='alert'>
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
 		<strong>@Model.errorMessage</strong>
-		<button type='button' class='btn-close' data-bs-dissmiss='alert' aria-label='close'></button>
+		<button type="button" class="btn-close" data-bs-dissmiss="alert" aria-label="Close"></button>
 	</div>
 }
 
 <form method="POST">
+	@* order id *@	
+	<input type="hidden" name="id" value="@Model.orderInfo.id">
 	<div class="row mt-3 mb-5">
-
 		<label class="col-sm-3 col-form-label m-1">Sąskaita faktūra</label>
 		<div class="col-sm-6 m-1">
 			<input type="text" class="form-control" name="invoice_id" value="@Model.orderInfo.invoice_id">
-		</div>
+			@*if field empty(error), filling form with value atribute with existing data *@
+		</div>	
 
 		<label class="col-sm-3 col-form-label m-1">Paslauga</label>
 		<div class="col-sm-6 m-1">
 			<input type="text" class="form-control" name="services_id" value="@Model.orderInfo.services_id">
 		</div>
 
-		<label class="col-sm-3 col-form-label m-1">Valandų kiekis</label>
+		<label class="col-sm-3 col-form-label m-1">Valandų skaičius</label>
 		<div class="col-sm-6 m-1">
 			<input type="text" class="form-control" name="hours" value="@Model.orderInfo.hours">
-			@*if field empty(error), filling form with value atribute with existing info *@
 		</div>
-	
+
 		@*if success showing confirmation that data correct *@
 		@if (Model.successMessage.Length > 0)
 		{
-			<div class="row m-2">
-					<div class="col-sm-9">
-						<div class="alert alert-success alert-dismissible fade show" role="alert">
-							<strong>@Model.successMessage</strong>
-							<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+				<div class="row m-2">
+						<div class="col-sm-9">
+							<div class="alert alert-success alert-dismissible fade show" role="alert">
+								<strong>@Model.successMessage</strong>
+								<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+							</div>
 						</div>
-					</div>
-			</div>
+				</div>
 		}
 
 		<div class="row m-2">
