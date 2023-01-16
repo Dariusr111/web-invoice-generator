@@ -18,7 +18,7 @@ namespace web_invoice_generator.Pages.Orders
 			// reading id
 			String id = Request.Query["id"];
 
-			// connecting to db geting info from db and filling object serviceInfo
+			// connecting to db geting info from db and filling object orderInfo
 			try
 			{
 				// connectionString
@@ -42,7 +42,7 @@ namespace web_invoice_generator.Pages.Orders
 							{
 								// and filling serviceInfo with data from db
 								orderInfo.id = "" + reader.GetInt32(0); //"" + int = converting int to string
-								orderInfo.invoice_id = "" + reader.GetString(1);
+								orderInfo.invoice_id = "" + reader.GetInt32(1);
 								orderInfo.services_id = "" + reader.GetInt32(2);
 								orderInfo.hours = "" + reader.GetInt32(3);
 							}
