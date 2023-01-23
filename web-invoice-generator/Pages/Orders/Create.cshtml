@@ -31,9 +31,8 @@
 		<label class="col-sm-3 col-form-label m-1">Valandų kiekis</label>
 		<div class="col-sm-6 m-1">
 			<input type="text" class="form-control" name="hours" value="@Model.orderInfo.hours">
-			@*if field empty(error), filling form with value atribute with existing info *@
 		</div>
-	
+		@*if field empty(error), filling form with value atribute with existing info *@
 		@*if success showing confirmation that data correct *@
 		@if (Model.successMessage.Length > 0)
 		{
@@ -55,5 +54,6 @@
 				<a class="btn btn-outline-primary" href="/" role="button">Atšaukti</a>
 			</div>
 		</div>
+
 	</div>
 </form>
